@@ -1,0 +1,31 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="code" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0f0f0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景圓角矩形 -->
+  <rect width="32" height="32" rx="6" fill="url(#bg)"/>
+  
+  <!-- HTML標籤符號 -->
+  <g fill="url(#code)" stroke="none">
+    <!-- 左尖括號 < -->
+    <path d="M10 8 L6 12 L6 20 L10 24" stroke="url(#code)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- 右尖括號 > -->
+    <path d="M22 8 L26 12 L26 20 L22 24" stroke="url(#code)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- 中間的斜線 / -->
+    <path d="M18 8 L14 24" stroke="url(#code)" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+  
+  <!-- 小點裝飾 -->
+  <circle cx="16" cy="6" r="1" fill="rgba(255,255,255,0.6)"/>
+  <circle cx="16" cy="26" r="1" fill="rgba(255,255,255,0.6)"/>
+</svg> 
