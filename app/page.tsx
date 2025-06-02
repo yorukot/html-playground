@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/resizable';
 import * as LZString from 'lz-string';
 
-export const DEFAULT_HTML = `<!DOCTYPE html>
+const DEFAULT_HTML = `<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
