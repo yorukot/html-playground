@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { RotateCcw, Share2, Copy, Sun, Moon } from 'lucide-react';
+import { RotateCcw, Share2, Copy, Sun, Moon, Github } from 'lucide-react';
 
 interface ToolbarProps {
   onReset: () => void;
@@ -88,6 +88,16 @@ export function Toolbar({ onReset, onShare, onCopy }: ToolbarProps) {
       >
         {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
         {isDark ? '淺色' : '深色'}
+      </Button>
+      
+      <Button
+        variant="outline"
+        size="sm"
+        onClick={() => window.open('https://github.com/yorukot/html-playground', '_blank')}
+        className="flex items-center gap-2"
+      >
+        <Github className="w-4 h-4" />
+        GitHub
       </Button>
     </div>
   );
