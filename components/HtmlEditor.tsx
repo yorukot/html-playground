@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useCallback, useEffect, useState } from 'react';
-import CodeMirror from '@uiw/react-codemirror';
-import { html } from '@codemirror/lang-html';
-import { oneDark } from '@codemirror/theme-one-dark';
+import { useCallback, useEffect, useState } from "react";
+import CodeMirror from "@uiw/react-codemirror";
+import { html } from "@codemirror/lang-html";
+import { oneDark } from "@codemirror/theme-one-dark";
 
 interface HtmlEditorProps {
   value: string;
@@ -32,32 +32,32 @@ export function HtmlEditor({ value, onChange }: HtmlEditorProps) {
   const [isDark, setIsDark] = useState(false);
   const debouncedValue = useDebounce(localValue, 300);
 
-  // 檢查主題
+  // Check theme
   useEffect(() => {
     const checkTheme = () => {
-      setIsDark(document.documentElement.classList.contains('dark'));
+      setIsDark(document.documentElement.classList.contains("dark"));
     };
-    
+
     checkTheme();
-    
-    // 監聽主題變化
+
+    // Listen for theme changes
     const observer = new MutationObserver(checkTheme);
     observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ['class']
+      attributeFilter: ["class"],
     });
-    
+
     return () => observer.disconnect();
   }, []);
 
-  // 當 debounced value 改變時，通知父組件
+  // When debounced value changes, notify parent component
   useEffect(() => {
     if (debouncedValue !== value) {
       onChange(debouncedValue);
     }
   }, [debouncedValue, onChange, value]);
 
-  // 當外部 value 改變時，更新本地狀態
+  // When external value changes, update local state
   useEffect(() => {
     setLocalValue(value);
   }, [value]);
@@ -67,13 +67,13 @@ export function HtmlEditor({ value, onChange }: HtmlEditorProps) {
   }, []);
 
   return (
-    <div 
+    <div
       className={`max-h-screen h-screen w-full ${
-        isDark ? 'bg-[#282c34]' : 'bg-white'
+        isDark ? "bg-[#282c34]" : "bg-white"
       }`}
     >
       <CodeMirror
-        className='max-h-screen overflow-y-auto'
+        className="max-h-screen overflow-y-auto"
         value={localValue}
         onChange={handleChange}
         extensions={[html()]}
@@ -92,11 +92,11 @@ export function HtmlEditor({ value, onChange }: HtmlEditorProps) {
           searchKeymap: true,
         }}
         style={{
-          fontSize: '14px',
-          height: '100%',
-          backgroundColor: isDark ? '#282c34' : '#ffffff',
+          fontSize: "14px",
+          height: "100%",
+          backgroundColor: isDark ? "#282c34" : "#ffffff",
         }}
       />
     </div>
   );
-} 
+}

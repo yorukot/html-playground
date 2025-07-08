@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 interface PreviewProps {
   htmlContent: string;
@@ -13,11 +13,14 @@ export function Preview({ htmlContent }: PreviewProps) {
     const iframe = iframeRef.current;
     if (!iframe) return;
 
-    // 如果 HTML 內容已經包含完整的 HTML 文檔結構，直接使用
-    // 否則包裝在基本的 HTML 結構中
+    // If HTML content already contains complete HTML document structure, use it directly
+    // Otherwise wrap it in basic HTML structure
     let fullHtml = htmlContent;
 
-    if (!htmlContent.toLowerCase().includes('<!doctype') && !htmlContent.toLowerCase().includes('<html')) {
+    if (
+      !htmlContent.toLowerCase().includes("<!doctype") &&
+      !htmlContent.toLowerCase().includes("<html")
+    ) {
       fullHtml = `
         <!DOCTYPE html>
         <html>
@@ -30,10 +33,10 @@ export function Preview({ htmlContent }: PreviewProps) {
       `;
     }
 
-    // 強制重新載入 iframe 內容，確保完全隔離
-    iframe.srcdoc = '';
-    
-    // 使用 setTimeout 確保 iframe 完全清空後再設置新內容
+    // Force reload iframe content to ensure complete isolation
+    iframe.srcdoc = "";
+
+    // Use setTimeout to ensure iframe is completely cleared before setting new content
     setTimeout(() => {
       if (iframe) {
         iframe.srcdoc = fullHtml;
@@ -46,14 +49,15 @@ export function Preview({ htmlContent }: PreviewProps) {
       <iframe
         ref={iframeRef}
         className="w-full h-full border-0 bg-white"
-        sandbox="allow-scripts"
+        sandbox="allow-scripts allow-modals"
         title="HTML Preview"
         style={{
-          colorScheme: 'light',
-          backgroundColor: 'white',
-          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+          colorScheme: "light",
+          backgroundColor: "white",
+          fontFamily:
+            '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
         }}
       />
     </div>
   );
-} 
+}
