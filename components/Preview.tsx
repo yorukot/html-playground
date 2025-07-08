@@ -60,6 +60,13 @@ export function Preview({ htmlContent }: PreviewProps) {
       {/* Browser tab style header */}
       <div className="flex-shrink-0 bg-gray-100 dark:bg-gray-800 border-b border-gray-300 dark:border-gray-600 h-10 flex items-center px-4">
         <div className="flex items-center space-x-3">
+          {/* Browser control buttons */}
+          <div className="flex space-x-1.5">
+            <div className="w-3 h-3 rounded-full bg-red-400"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+            <div className="w-3 h-3 rounded-full bg-green-400"></div>
+          </div>
+
           {/* Title */}
           <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-300">
             <svg
