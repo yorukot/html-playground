@@ -6,18 +6,18 @@ export default function NotFound() {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center px-6">
       <div className="text-center max-w-md mx-auto">
-        {/* 404 數字 */}
+        {/* 404 Number */}
         <h1 className="text-8xl font-light text-gray-900 mb-4">404</h1>
 
-        {/* 標題 */}
+        {/* Title */}
         <h2 className="text-2xl font-medium text-gray-900 mb-3">找不到頁面</h2>
 
-        {/* 描述 */}
+        {/* Description */}
         <p className="text-gray-600 mb-8 leading-relaxed">
           您要尋找的頁面不存在或已被移動。
         </p>
 
-        {/* 按鈕 */}
+        {/* Buttons */}
         <div className="space-y-3">
           <Link
             href="/"

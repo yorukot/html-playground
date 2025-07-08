@@ -11,6 +11,8 @@
   "dependencies": {
     "@codemirror/lang-html": "^6.4.9",
     "@codemirror/theme-one-dark": "^6.1.2",
+    "@codemirror/view": "^6.38.0",
+    "@fontsource/jetbrains-mono": "^5.2.6",
     "@radix-ui/react-slot": "^1.2.3",
     "@types/lz-string": "^1.5.0",
     "@uiw/react-codemirror": "^4.23.12",
